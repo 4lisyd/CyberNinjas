@@ -1,3 +1,4 @@
+import 'package:cyber_ninjas/screens/welcome/welcome0.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,7 +22,9 @@ class MyApp extends StatelessWidget {
 class Start extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Welcome(),
+    );
   }
 }
 
