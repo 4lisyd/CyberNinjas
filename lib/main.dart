@@ -1,4 +1,5 @@
 import 'package:cyber_ninjas/screens/welcome/welcome0.dart';
+import 'package:cyber_ninjas/theme/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,9 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'CyberNinjas',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: currentTheme(),
       home: Start(),
     );
   }
@@ -27,4 +26,3 @@ class Start extends StatelessWidget {
     );
   }
 }
-

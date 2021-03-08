@@ -1,18 +1,33 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-Widget button1() {
-  return TextButton(
-      onPressed: () {},
-      child: TextButton(
-        child: Container(
-          child: Center(
-            child: Text("continue"),
+class Button1 extends StatelessWidget {
+  Function onPress;
+  String title;
+
+  Button1(this.title, this.onPress);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+        onPressed: onPress,
+        child: TextButton(
+          style: ButtonStyle(
+            elevation: MaterialStateProperty.all(26),
           ),
-          height: 60,
-          width: 60,
-          color: Colors.amberAccent,
-        ),
-        onPressed: () {},
-      ));
+          // style: ,
+          child: Container(
+            child: Center(
+              child: Text(
+                title,
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            height: 50,
+            width: 150,
+            color: Theme.of(context).buttonColor,
+          ),
+          onPressed: onPress,
+        ));
+  }
 }
