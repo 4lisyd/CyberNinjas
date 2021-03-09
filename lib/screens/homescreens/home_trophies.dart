@@ -1,13 +1,13 @@
 import 'package:cyber_ninjas/components/pageRouteBuilder.dart';
-import 'package:cyber_ninjas/screens/homescreens/home_trophies.dart';
+import 'package:cyber_ninjas/screens/homescreens/home_profile.dart';
 import 'package:flutter/material.dart';
 
-class HomeTest extends StatefulWidget {
+class HomeTrophies extends StatefulWidget {
   @override
-  _HomeTestState createState() => _HomeTestState();
+  _HomeTrophiesState createState() => _HomeTrophiesState();
 }
 
-class _HomeTestState extends State<HomeTest> {
+class _HomeTrophiesState extends State<HomeTrophies> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,48 +78,65 @@ class _HomeTestState extends State<HomeTest> {
                     Container(
                       margin: EdgeInsets.all(7),
                       decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                                color: Theme.of(context).accentColor,
-                                blurRadius: 30,
-                                spreadRadius: 2),
-                          ],
                           color: Theme.of(context).backgroundColor,
                           shape: BoxShape.rectangle,
                           borderRadius: BorderRadius.all(Radius.circular(20))),
                       child: Center(
-                        child: Text(
-                          'take tests',
-                          style: Theme.of(context).textTheme.button,
-                        ),
+                        child: Text('take tests'),
                       ),
                       width: MediaQuery.of(context).size.width / 3,
                     ),
                     Expanded(
-                      child: Container(
-                        child: CircleAvatar(
-                          radius: MediaQuery.of(context).size.height / 20 - 2,
-                          backgroundColor: Theme.of(context).buttonColor,
-                          child: Text(
-                            'profile',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.white,
+                      child: TextButton(
+                        child: Container(
+                          // decoration: BoxDecoration(boxShadow: [
+                          //   BoxShadow(
+                          //       color: Theme.of(context).accentColor,
+                          //       blurRadius: 30,
+                          //       spreadRadius: 2)
+                          // ]),
+                          child: CircleAvatar(
+                            radius: MediaQuery.of(context).size.height / 20 - 2,
+                            backgroundColor: Theme.of(context).buttonColor,
+                            child: Text(
+                              'Profile',
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),
+                        onPressed: () {
+                          // PageRouteBuilder(pageBuilder: (co){})
+
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => HomeProfile()));
+
+                          Navigator.push(
+                              context, FadeRoute(page: HomeProfile()));
+                        },
                       ),
                     ),
                     Container(
                       margin: EdgeInsets.all(7),
                       decoration: BoxDecoration(
-                          color: Theme.of(context).backgroundColor,
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Theme.of(context).accentColor,
+                              blurRadius: 30,
+                              spreadRadius: 2),
+                        ],
+                        color: Theme.of(context).backgroundColor,
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(20),
+                        ),
+                      ),
                       child: Center(
                         child: Text(
                           'Trophies',
-                          style: TextStyle(color: Colors.white),
                         ),
                       ),
                       width: MediaQuery.of(context).size.width / 3,
