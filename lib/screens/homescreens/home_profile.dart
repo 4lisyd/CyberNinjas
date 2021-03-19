@@ -27,6 +27,7 @@ class _HomeProfileState extends State<HomeProfile> {
                 child: Icon(
                   Icons.settings,
                   size: 40,
+                  color: Theme.of(context).canvasColor,
                 ),
               ),
             ),
@@ -45,6 +46,7 @@ class _HomeProfileState extends State<HomeProfile> {
               bottom: 0,
               child: Container(
                 width: MediaQuery.of(context).size.width,
+                // height: MediaQuery.of(context).size.height,
                 child: ColorFiltered(
                   colorFilter: ColorFilter.mode(
                       Colors.white.withOpacity(0.3), BlendMode.srcOver),
@@ -56,105 +58,18 @@ class _HomeProfileState extends State<HomeProfile> {
               ),
             ),
             Positioned(
-              bottom: 10,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(20),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Theme.of(context).backgroundColor,
-                      spreadRadius: 5,
-                      offset: Offset(0, 20),
-                      blurRadius: 30,
-                    )
-                  ],
-                ),
-                height: MediaQuery.of(context).size.height / 10,
-                width: MediaQuery.of(context).size.width - 30,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    TextButton(
-                      style: ButtonStyle(
-                        padding: MaterialStateProperty.all(
-                          EdgeInsets.symmetric(vertical: 0, horizontal: 0),
-                        ),
-                      ),
-                      child: Container(
-                        margin: EdgeInsets.all(7),
-                        decoration: BoxDecoration(
-                            color: Theme.of(context).backgroundColor,
-                            shape: BoxShape.rectangle,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
-                        child: Center(
-                          child: Text(
-                            'take tests',
-                            style: Theme.of(context).textTheme.button,
-                          ),
-                        ),
-                        width: MediaQuery.of(context).size.width / 3,
-                      ),
-                      onPressed: () {
-                        print('tests');
-                        Navigator.of(context).push(FadeRoute(page: HomeTest()));
-                      },
-                    ),
-                    Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(boxShadow: [
-                          BoxShadow(
-                              color: Theme.of(context).accentColor,
-                              blurRadius: 30,
-                              spreadRadius: 2)
-                        ]),
-                        child: CircleAvatar(
-                          radius: MediaQuery.of(context).size.height / 20 - 2,
-                          backgroundColor: Theme.of(context).buttonColor,
-                          child: Text(
-                            'profile',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    TextButton(
-                      style: ButtonStyle(
-                        padding: MaterialStateProperty.all(
-                          EdgeInsets.symmetric(vertical: 0, horizontal: 0),
-                        ),
-                      ),
-                      child: Container(
-                        margin: EdgeInsets.all(7),
-                        decoration: BoxDecoration(
-                            color: Theme.of(context).backgroundColor,
-                            shape: BoxShape.rectangle,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
-                        child: Center(
-                          child: Text(
-                            'Trophies',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ),
-                        width: MediaQuery.of(context).size.width / 3,
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                            context, FadeRoute(page: HomeTrophies()));
-                      },
-                    ),
-                  ],
+              top: 100,
+              child: CircleAvatar(
+                radius: 100,
+                backgroundImage: NetworkImage(
+                  "https://www.nicepng.com/png/detail/136-1366211_group-of-10-guys-login-user-icon-png.png",
+                  // scale: 10,
                 ),
               ),
             ),
+            // Positioned(
+            //   child: Column(),
+            // ),
           ],
         ),
       ),

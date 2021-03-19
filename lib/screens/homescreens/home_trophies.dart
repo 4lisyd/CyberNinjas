@@ -22,8 +22,9 @@ class _HomeTrophiesState extends State<HomeTrophies> {
               child: Container(
                 margin: EdgeInsets.all(20),
                 child: Icon(
-                  Icons.settings,
+                  Icons.card_giftcard,
                   size: 40,
+                  color: Theme.of(context).canvasColor,
                 ),
               ),
             ),
@@ -33,7 +34,7 @@ class _HomeTrophiesState extends State<HomeTrophies> {
               child: Container(
                 margin: EdgeInsets.all(20),
                 child: Text(
-                  'Profile',
+                  'Trophies',
                   style: Theme.of(context).textTheme.headline1,
                 ),
               ),
@@ -49,99 +50,6 @@ class _HomeTrophiesState extends State<HomeTrophies> {
                     "lib/assets/screenComponents/birdsTriangleCorner.jpg",
                     colorBlendMode: BlendMode.dstATop,
                   ),
-                ),
-              ),
-            ),
-            Positioned(
-              bottom: 10,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(20),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Theme.of(context).backgroundColor,
-                      spreadRadius: 5,
-                      offset: Offset(0, 20),
-                      blurRadius: 30,
-                    )
-                  ],
-                ),
-                height: MediaQuery.of(context).size.height / 10,
-                width: MediaQuery.of(context).size.width - 30,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.all(7),
-                      decoration: BoxDecoration(
-                          color: Theme.of(context).backgroundColor,
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
-                      child: Center(
-                        child: Text('take tests'),
-                      ),
-                      width: MediaQuery.of(context).size.width / 3,
-                    ),
-                    Expanded(
-                      child: TextButton(
-                        child: Container(
-                          // decoration: BoxDecoration(boxShadow: [
-                          //   BoxShadow(
-                          //       color: Theme.of(context).accentColor,
-                          //       blurRadius: 30,
-                          //       spreadRadius: 2)
-                          // ]),
-                          child: CircleAvatar(
-                            radius: MediaQuery.of(context).size.height / 20 - 2,
-                            backgroundColor: Theme.of(context).buttonColor,
-                            child: Text(
-                              'Profile',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ),
-                        onPressed: () {
-                          // PageRouteBuilder(pageBuilder: (co){})
-
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => HomeProfile()));
-
-                          Navigator.push(
-                              context, FadeRoute(page: HomeProfile()));
-                        },
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.all(7),
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                              color: Theme.of(context).accentColor,
-                              blurRadius: 30,
-                              spreadRadius: 2),
-                        ],
-                        color: Theme.of(context).backgroundColor,
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(20),
-                        ),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Trophies',
-                        ),
-                      ),
-                      width: MediaQuery.of(context).size.width / 3,
-                    ),
-                  ],
                 ),
               ),
             ),

@@ -1,4 +1,5 @@
 import 'package:cyber_ninjas/components/buttons.dart';
+import 'package:cyber_ninjas/screens/homescreens/home.dart';
 import 'package:cyber_ninjas/screens/homescreens/home_profile.dart';
 import 'package:flutter/material.dart';
 
@@ -15,8 +16,8 @@ class Welcome3 extends StatelessWidget {
           ),
           Button1('conti0nue', () {
             print('continued...');
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => HomeProfile()));
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Home()));
           }),
         ],
       ),

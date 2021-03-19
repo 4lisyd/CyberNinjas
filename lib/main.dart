@@ -1,4 +1,5 @@
 import 'package:cyber_ninjas/models/quiz.dart';
+import 'package:cyber_ninjas/screens/homescreens/home.dart';
 import 'package:cyber_ninjas/screens/homescreens/home_tests.dart';
 import 'package:cyber_ninjas/screens/welcome/welcome0.dart';
 import 'package:cyber_ninjas/theme/theme.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       title: 'CyberNinjas',
       theme: currentTheme(),
       // home: Start(),
-      home: HomeTest(),
+      home: Start(),
     );
   }
 }
@@ -33,7 +34,7 @@ class Start extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Welcome(),
+      body: Home(),
     );
   }
 }
